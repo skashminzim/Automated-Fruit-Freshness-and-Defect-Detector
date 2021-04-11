@@ -1,6 +1,6 @@
 # Automated-Fruit-Freshness-and-Defect-Detector
 This automated freshness and defect detection project intends to create an automated system to identify raw and stale elements and separate them from the fresh fruits.<br/><br/>
-**Group Name:** Foxtrot(A)<br/>
+**Group Name:** Foxtrot(A)<br/><br/>
 **Contributors:**
   - Sumaiya Kashmin Zim(201814016)
   - Zannatul Ferdous(201814024)
