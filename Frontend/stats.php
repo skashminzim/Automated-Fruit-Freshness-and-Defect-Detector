@@ -157,12 +157,12 @@ table, th, td {
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.php" class="nav-link"><b>Home</b></a></li>
+	          <li class="nav-item"><a href="index.php" class="nav-link"><b>Home</b></a></li>
 
 
 
 	          <li class="nav-item"><a href="image.php" class="nav-link"><b>Image Processing</b></a></li>
-			        <li class="nav-item"><a href="stats.php" class="nav-link"><b>Statistics</b></a></li>
+			        <li class="nav-item active"><a href="stats.php" class="nav-link"><b>Statistics</b></a></li>
 			            <li class="nav-item"><a href="about.php" class="nav-link"><b>About</b></a></li>
 			  <!-- <li class="nav-item"><a href="signin.php" class="nav-link"><b>Sign in</b></a></li>-->
         <li class="nav-item"><a href="logout.php" class="nav-link"><b>Log Out</b></a></li>
