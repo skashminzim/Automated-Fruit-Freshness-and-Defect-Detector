@@ -107,7 +107,7 @@ input:checked + .slider:before {
 	          <li class="nav-item"><a href="image.php" class="nav-link"><b>Image Processing</b></a></li>
 			  	        <li class="nav-item"><a href="stats.php" class="nav-link"><b>Statistics</b></a></li>
 			            <li class="nav-item"><a href="about.php" class="nav-link"><b>About</b></a></li>
-			   <!--<li class="nav-item"><a href="signin.php" class="nav-link"><b>Sign in</b></a></li>-->
+			   <li class="nav-item"><a href="signin.php" class="nav-link"><b>Sign in</b></a></li>
 </ul>
 	      </div>
 	    </div>
