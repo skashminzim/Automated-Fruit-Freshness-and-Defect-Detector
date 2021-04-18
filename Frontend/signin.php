@@ -99,20 +99,20 @@ border-radius: 50%;
 
       <div class="collapse navbar-collapse" id="ftco-nav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"><a href="index.php" class="nav-link"><b>Home</b></a></li>
+          <li class="nav-item"><a href="index.php" class="nav-link"><b>Home</b></a></li>
 
 
 
           <li class="nav-item"><a href="image.php" class="nav-link"><b>Image Processing</b></a></li>
       <li class="nav-item"><a href="stats.php" class="nav-link"><b>Statistics</b></a></li>
                 <li class="nav-item"><a href="about.php" class="nav-link"><b>About</b></a></li>
-       <!--<li class="nav-item"><a href="signin.php" class="nav-link"><b>Sign in</b></a></li>-->
+       <!--<li class="nav-item active"><a href="signin.php" class="nav-link"><b>Sign in</b></a></li>-->
         </ul>
       </div>
     </div>
   </nav>
   <!-- END nav -->
-<div class="hero-wrap hero-bread" style="background-image: url('images/sign.jpg');">
+<div class="hero-wrap hero-bread" style="background-image: url('images/signin.jpeg');">
     <div class="container">
       <div class="row no-gutters slider-text align-items-center justify-content-center">
         <div class="col-md-9 ftco-animate text-center">
