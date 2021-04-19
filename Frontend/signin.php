@@ -130,11 +130,11 @@ border-radius: 50%;
            <!-- Background image for card set in CSS! -->
         </div>
         <div class="card-body">
-          <h1 class="card-title text-center">ADMIN LOGIN</h1>
+          <h1 class="card-title text-center">OWNER LOGIN</h1>
           <form class="form-signin" id="signup-form" method="POST">
             <div class="form-label-group">
               <input type="text" id="inputUserame" class="form-control" placeholder="Admin Name" name="AdminName" required autofocus>
-              <label for="inputUserame">Admin Name</label>
+              <label for="inputUserame">Owner Name</label>
             </div>
 
             <div class="form-label-group">

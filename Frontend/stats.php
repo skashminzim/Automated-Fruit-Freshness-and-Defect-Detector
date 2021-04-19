@@ -150,20 +150,20 @@ table, th, td {
 <!--////////////////////////////////////////php////-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.php"><font size="5">AFDD</a>
+	      <a class="navbar-brand" href="index1.php"><font size="5">AFDD</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.php" class="nav-link"><b>Home</b></a></li>
+	          <li class="nav-item"><a href="index1.php" class="nav-link"><b>Home</b></a></li>
 
 
 
-	          <li class="nav-item"><a href="image.php" class="nav-link"><b>Image Processing</b></a></li>
+	          <li class="nav-item"><a href="image1.php" class="nav-link"><b>Image Processing</b></a></li>
 			        <li class="nav-item active"><a href="stats.php" class="nav-link"><b>Statistics</b></a></li>
-			            <li class="nav-item"><a href="about.php" class="nav-link"><b>About</b></a></li>
+			            <li class="nav-item"><a href="about1.php" class="nav-link"><b>About</b></a></li>
 			  <!-- <li class="nav-item"><a href="signin.php" class="nav-link"><b>Sign in</b></a></li>-->
         <li class="nav-item"><a href="logout.php" class="nav-link"><b>Log Out</b></a></li>
 
@@ -232,7 +232,7 @@ table, th, td {
         <div class="col-xl-12 mx-auto">
           <?php
          if(isset($_POST['search'])){
-         print '<br><br><br><br>';
+         print '<br><br>';
           print '<table class="center" >';
             print '<thead>';
              print '<tr class="header">';
