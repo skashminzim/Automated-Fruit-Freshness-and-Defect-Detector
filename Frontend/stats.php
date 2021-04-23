@@ -1,3 +1,14 @@
+<?php
+ session_start();
+if(!$_SESSION['AdminLoginId'])
+{
+
+    header("Location: signin.php");
+    echo "<script>alert('Please login first');</script>";
+}
+require("connection.php");
+//session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -136,42 +147,25 @@ table, th, td {
 </style>
   </head>
   <body class="goto-here">
-
-
-    <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "IDP";
-
-    // Create connection
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    // Check connection
-    if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
-    }
-    else{
-      echo "connected";
-    }
-    ?>
-
+<!--////////////////////////////////////////php////-->
     <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html"><font size="5">AFDD</a>
+	      <a class="navbar-brand" href="index1.php"><font size="5">AFDD</a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item active"><a href="index.html" class="nav-link"><b>Home</b></a></li>
+	          <li class="nav-item"><a href="index1.php" class="nav-link"><b>Home</b></a></li>
 
 
 
-	          <li class="nav-item"><a href="image.html" class="nav-link"><b>Image Processing</b></a></li>
-			        <li class="nav-item"><a href="stats.html" class="nav-link"><b>Statistics</b></a></li>
-			            <li class="nav-item"><a href="about.html" class="nav-link"><b>About</b></a></li>
-			   <li class="nav-item"><a href="signin.html" class="nav-link"><b>Sign in</b></a></li>
+	          <li class="nav-item"><a href="image1.php" class="nav-link"><b>Image Processing</b></a></li>
+			        <li class="nav-item active"><a href="stats.php" class="nav-link"><b>Statistics</b></a></li>
+			            <li class="nav-item"><a href="about1.php" class="nav-link"><b>About</b></a></li>
+			  <!-- <li class="nav-item"><a href="signin.php" class="nav-link"><b>Sign in</b></a></li>-->
+        <li class="nav-item"><a href="logout.php" class="nav-link"><b>Log Out</b></a></li>
 
 
 	        </ul>
@@ -183,7 +177,7 @@ table, th, td {
       <div class="container">
         <div class="row no-gutters slider-text align-items-center justify-content-center">
           <div class="col-md-9 ftco-animate text-center">
-          	<!--<p class="breadcrumbs"><span class="mr-2"><a href="index.html">Home</a></span> <span>Shop</span></p>-->
+          	<!--<p class="breadcrumbs"><span class="mr-2"><a href="index.php">Home</a></span> <span>Shop</span></p>-->
             <h1 class="mb-0 bread">Statistics</h1>
           </div>
         </div>
@@ -212,232 +206,6 @@ table, th, td {
         </div>
       </div>
     </div>
-   <!--<header class="masthead text-white text-center">
-    <div class="overlay"></div>
-    <div class="container">
-      <div class="row">
-        <div class="col-xl-12 mx-auto">
-		 <br>
-         <br>
-		 <br>
-         <br>
-		 <br>
-
-         <br>
-        </div>
-        <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-
-              </div>
-
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </header>-->
-  <!-- STARTS FROM HERE
-   <section class="ftco-section bg-light">
-    	<div class="container">
-				<div class="row justify-content-center mb-3 pb-3">
-          <div class="col-md-12 heading-section text-center ftco-animate">
-            <h2 class="mb-4">Automated Freshness & Defection Detector</h2>
-            <p>Stay Healthy, Stay Safe</p>
-          </div>
-        </div>
-    	</div>
-    	<div class="container">
-    		<div class="row">
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product d-flex flex-column">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/conveyer.jpg" alt="Colorlib Template" style="width:300px;height:300px;">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span></span>
-		    					</div>
-		    					<div class="rating">
-
-	    						</div>
-	    					</div>
-    						<h3><a href="#">Conveyer Belt  </a>
-							<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label> </h3>
-    						<div class="pricing">
-	    						<p class="price"><span></span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product d-flex flex-column">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/jetsonnano.jpg" alt="Colorlib Template" style="width:300px;height:300px;">
-    						<span class="status"></span>
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span></span>
-		    					</div>
-		    					<div class="rating">
-
-	    						</div>
-	    					</div>
-    						<h3><a href="#">Jetson Nano</a>
-							<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label></h3>
-  							<div class="pricing">
-	    						<p class="price"><span class="mr-2 price-dc"></span><span class="price-sale"></span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/camera.jpg" alt="Colorlib Template" style="width:300px;height:300px;">
-	    					<div class="overlay"></div>
-	    				</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span></span>
-		    					</div>
-		    					<div class="rating">
-
-	    						</div>
-	    					</div>
-    						<h3><a href="#">Camera</a>
-							<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label> </h3>
-  							<div class="pricing">
-	    						<p class="price"><span></span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-    			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
-    				<div class="product">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/servo.jpg" alt="Colorlib Template" style="width:300px;height:300px;">
-    						<div class="overlay"></div>
-    					</a>
-    					<div class="text py-3 pb-4 px-3">
-    						<div class="d-flex">
-    							<div class="cat">
-		    						<span></span>
-		    					</div>
-		    					<div class="rating">
-
-	    						</div>
-	    					</div>
-    						<h3><a href="#">Servo Motor</a>
-							<label class="switch">
-  <input type="checkbox">
-  <span class="slider round"></span>
-</label> </h3>
-  							<div class="pricing">
-	    						<p class="price"><span></span></p>
-	    					</div>
-	    					<p class="bottom-area d-flex px-3">
-
-    						</p>
-    					</div>
-    				</div>
-    			</div>
-
-
-    		</div>
-    	</div>
-    </section>-->
-
-
-
-  <!-- Icons Grid -->
-  <!--<section class="features-icons bg-light text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-screen-desktop m-auto text-primary"></i>
-            </div>
-            <h3>Fully Responsive</h3>
-            <p class="lead mb-0">This theme will look great on any device, no matter the size!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-layers m-auto text-primary"></i>
-            </div>
-            <h3>Bootstrap 4 Ready</h3>
-            <p class="lead mb-0">Featuring the latest build of the new Bootstrap 4 framework!</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="features-icons-item mx-auto mb-0 mb-lg-3">
-            <div class="features-icons-icon d-flex">
-              <i class="icon-check m-auto text-primary"></i>
-            </div>
-            <h3>Easy to Use</h3>
-            <p class="lead mb-0">Ready to use with your own content, or customize the source files!</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>-->
-
-  <!-- Image Showcases -->
-
-  <!-- Testimonials
-  <section class="testimonials text-center bg-light">
-    <div class="container">
-      <h2 class="mb-5">What people are saying...</h2>
-      <div class="row">
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-1.jpg" alt="">
-            <h5>Margaret E.</h5>
-            <p class="font-weight-light mb-0">"Awesome Service!"</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-2.jpg" alt="">
-            <h5>Fred S.</h5>
-            <p class="font-weight-light mb-0">"I am satisfied with their services"</p>
-          </div>
-        </div>
-        <div class="col-lg-4">
-          <div class="testimonial-item mx-auto mb-5 mb-lg-0">
-            <img class="img-fluid rounded-circle mb-3" src="img/testimonials-3.jpg" alt="">
-            <h5>Sarah W.</h5>
-            <p class="font-weight-light mb-0">"Heartiest Thanks to Tie the Knot team for their excellent and gorgeous arrangement "</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <!-- Call to Action -->
   <div class="container">
       <div class="row">
@@ -445,13 +213,13 @@ table, th, td {
           <h2 class="mb-4">View the amount of fresh food & defected food in one day!</h2>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form>
+          <form method="POST">
             <div class="form-row">
               <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter any date...">
+                <input type="date" name="dates" class="form-control form-control-lg" placeholder="Enter any date..." >
               </div>
               <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Search!</button>
+                <button type="submit" name="search" class="btn btn-block btn-lg btn-primary">Search!</button>
               </div>
             </div>
           </form>
@@ -461,64 +229,63 @@ table, th, td {
 
 	 <div class="container">
       <div class="row">
-
-
         <div class="col-xl-12 mx-auto">
-		 <br>
-         <br>
-		 <br>
+          <?php
+         if(isset($_POST['search'])){
+         print '<br><br>';
+          print '<table class="center" >';
+            print '<thead>';
+             print '<tr class="header">';
+                 print '<td>Batch NO</td>';
+                 print '<td>Fruit Name</td>';
+                 print '<td>Total Kgs</td>';
+                 print '<td>Usable Kgs</td>';
+                  print '<td>Unusable Kgs</td>';
+                  print '<td>Date of Processing</td>';
+             print ' </tr>';
+
+            print '</thead>';
+            print '<tbody>';
 
 
-         <br>
+         $date=date('Y-m-d', strtotime($_POST['dates']));
+         // $sqli= "SELECT * FROM stats_fruit WHERE `Date of Processing`= '2021-04-18'";
+           $sqli= "SELECT * FROM stats_fruit WHERE `Date of Processing`= '$date'";
 
-         <table class="center" >
-           <thead>
-             <tr class="header">
-                 <td>Batch NO</td>
-                 <td>Fruit Name</td>
-                 <td>Total Kgs</td>
-                 <td>Usable Kgs</td>
-                 <td>Unusable Kgs</td>
-                 <td>Date of Processing</td>
-             </tr>
+             $result = mysqli_query($conn,$sqli);
 
-           </thead>
-           <tbody>
+             //echo $result;
+
+            while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+               //echo $row;
+                echo "<tr>";
+                echo "<td>".@$row["Batch No"]."</td>";
+                echo "<td>".@$row["Fruit Name"]."</td>";
+                echo "<td>".@$row["Total Kgs"]."</td>";
+                echo "<td>".@$row["Usable Kgs"]."</td>";
+                echo "<td>".@$row["Unusable Kgs"]."</td>";
+                echo "<td>".@$row["Date of Processing"]."</td>";
+                echo "</tr>";
+            }
+
+             print '</tbody>';
+
+          print '</table>';
+         }
+         ?>
 
 
 
+        <br>
+           <br>
+        <br>
 
-             <?php
-                 $sqli= "SELECT * FROM stats_fruit";
 
-                 $result = mysqli_query($conn,$sqli);
+           <br>
+        </div>
 
-                 //echo $result;
-                while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
-                   //echo $row;
-                    echo "<tr>";
-                    echo "<td>".@$row[BatchNo]."</td>";
-                    echo "<td>".@$row[FruitName]."</td>";
-                    echo "<td>".@$row[TotalKgs]."</td>";
-                    echo "<td>".@$row[UsableKgs]."</td>";
-                    echo "<td>".@$row[UnusableKgs]."</td>";
-                    echo "<td>".@$row[DateofProcessing]."</td>";
-                    echo "</tr>";
-                }
-
-             ?>
            </tbody>
 
-         </table>
-
-
-         <br>
-             <br>
-    		 <br>
-
-
-             <br>
-        </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
             <div class="form-row">
