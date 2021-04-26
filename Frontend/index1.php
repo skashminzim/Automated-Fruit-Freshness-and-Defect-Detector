@@ -165,7 +165,7 @@ input:checked + .slider:before {
     		<div class="row">
     			<div class="col-sm-12 col-md-6 col-lg-3 ftco-animate d-flex">
     				<div class="product d-flex flex-column">
-    					<a href="#" class="img-prod"><img class="img-fluid" src="images/stats.png" alt="Colorlib Template" style="width:300px;height:300px;">
+    					<a href="#" class="img-prod"><img class="img-fluid" src="images/conveyer.jpg" alt="Colorlib Template" style="width:300px;height:300px;">
     						<div class="overlay"></div>
     					</a>
     					<div class="text py-3 pb-4 px-3">
