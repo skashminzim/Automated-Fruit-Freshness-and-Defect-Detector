@@ -145,6 +145,7 @@ table, th, td {
   border: 1px solid black;
 }
 </style>
+
   </head>
   <body class="goto-here">
 <!--////////////////////////////////////////php////-->
@@ -162,7 +163,7 @@ table, th, td {
 
 
 	          <li class="nav-item"><a href="image1.php" class="nav-link"><b>Image Processing</b></a></li>
-			        <li class="nav-item active"><a href="stats.php" class="nav-link"><b>Statistics</b></a></li>
+			        <li class="nav-item active"><a href="stats.php" class="nav-link"><b>Records</b></a></li>
 			            <li class="nav-item"><a href="about1.php" class="nav-link"><b>About</b></a></li>
 			  <!-- <li class="nav-item"><a href="signin.php" class="nav-link"><b>Sign in</b></a></li>-->
         <li class="nav-item"><a href="logout.php" class="nav-link"><b>Log Out</b></a></li>
@@ -271,6 +272,9 @@ table, th, td {
              print '</tbody>';
 
           print '</table>';
+          print '<br><br>';
+          include 'fruitchart.php';
+
          }
          ?>
 
