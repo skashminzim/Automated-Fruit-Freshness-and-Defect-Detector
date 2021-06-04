@@ -16,9 +16,9 @@
        showInLegend: true,
        dataPoints: [
 
-       { label: "apple", y: 2 },
-	   { label: "banana", y: 2 },
-       { label: "orange", y: 2 }
+       { label: "apple", y: <?php echo $u_apple ?>},
+	   { label: "banana", y: <?php echo $u_banana ?> },
+       { label: "orange", y: <?php echo $u_orange ?> }
 
        ]
      },
@@ -30,9 +30,9 @@
       showInLegend: true,
       dataPoints: [
 
-      { label: "apple", y: 3 },
-	  { label: "banana", y: 3 },
-      { label: "orange", y: 3 }
+      { label: "apple", y: <?php echo $un_apple ?> },
+	  { label: "banana", y: <?php echo $un_banana ?> },
+      { label: "orange", y: <?php echo $un_orange ?> }
 
       ]
     }

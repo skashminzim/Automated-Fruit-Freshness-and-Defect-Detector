@@ -8,6 +8,7 @@ if(!$_SESSION['AdminLoginId'])
 }
 require("connection.php");
 //session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -191,8 +192,6 @@ table, th, td {
 		 <br>
          <br>
 		 <br>
-
-
          <br>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
@@ -232,6 +231,12 @@ table, th, td {
       <div class="row">
         <div class="col-xl-12 mx-auto">
           <?php
+          $u_apple = 0;
+          $u_banana = 0;
+          $u_orange = 0;
+          $un_apple = 0;
+          $un_banana = 0;
+          $un_orange = 0;
          if(isset($_POST['search'])){
          print '<br><br>';
           print '<table class="center" >';
@@ -239,33 +244,39 @@ table, th, td {
              print '<tr class="header">';
                  print '<td>Batch NO</td>';
                  print '<td>Fruit Name</td>';
-                 print '<td>Total Kgs</td>';
-                 print '<td>Usable Kgs</td>';
-                  print '<td>Unusable Kgs</td>';
+                 print '<td>Total Fruits</td>';
+                 print '<td>Usable</td>';
+                  print '<td>Unusable</td>';
                   print '<td>Date of Processing</td>';
              print ' </tr>';
-
             print '</thead>';
             print '<tbody>';
-
-
          $date=date('Y-m-d', strtotime($_POST['dates']));
-         // $sqli= "SELECT * FROM stats_fruit WHERE `Date of Processing`= '2021-04-18'";
-           $sqli= "SELECT * FROM stats_fruit WHERE `Date of Processing`= '$date'";
-
+        //  $sqli= "SELECT * FROM stats_fruit WHERE `Date of Processing`= '2021-04-18'";
+           $sqli= "SELECT * FROM `record` WHERE `Date_of_Processing`= '$date'";
              $result = mysqli_query($conn,$sqli);
-
              //echo $result;
-
             while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
                //echo $row;
+               if(@$row["Fruit_Name"] == 'Apple'){
+                 $u_apple = @$row["Usable_Kgs"];
+                 $un_apple = @$row["Unusable_Kgs"];
+               }elseif (@$row["Fruit_Name"] == 'Banana'){
+                 $u_banana = @$row["Usable_Kgs"];
+                 $un_banana = @$row["Unusable_Kgs"];
+               }
+               else
+               {
+                 $u_orange = @$row["Usable_Kgs"];
+                 $un_orange = @$row["Unusable_Kgs"];
+               }
                 echo "<tr>";
-                echo "<td>".@$row["Batch No"]."</td>";
-                echo "<td>".@$row["Fruit Name"]."</td>";
-                echo "<td>".@$row["Total Kgs"]."</td>";
-                echo "<td>".@$row["Usable Kgs"]."</td>";
-                echo "<td>".@$row["Unusable Kgs"]."</td>";
-                echo "<td>".@$row["Date of Processing"]."</td>";
+                echo "<td>".@$row["Batch_No"]."</td>";
+                echo "<td>".@$row["Fruit_Name"]."</td>";
+                echo "<td>".@$row["Total_Kgs"]."</td>";
+                echo "<td>".@$row["Usable_Kgs"]."</td>";
+                echo "<td>".@$row["Unusable_Kgs"]."</td>";
+                echo "<td>".@$row["Date_of_Processing"]."</td>";
                 echo "</tr>";
             }
 
@@ -273,23 +284,16 @@ table, th, td {
 
           print '</table>';
           print '<br><br>';
+        #  echo $u_apple;
           include 'fruitchart.php';
-
          }
          ?>
-
-
-
         <br>
            <br>
         <br>
-
-
            <br>
         </div>
-
            </tbody>
-
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
           <form>
             <div class="form-row">
@@ -320,7 +324,7 @@ table, th, td {
               <p>Know what you eat</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
 
-                
+
 			  </ul>
             </div>
           </div>
@@ -340,7 +344,7 @@ table, th, td {
               <h2 class="ftco-heading-2">Help</h2>
               <div class="d-flex">
 	              <ul class="list-unstyled mr-l-5 pr-l-3 mr-4">
-	               
+
 	                <li><a href="#" class="py-2 d-block">Terms &amp; Conditions</a></li>
 	                <li><a href="#" class="py-2 d-block">Privacy Policy</a></li>
 	              </ul>
