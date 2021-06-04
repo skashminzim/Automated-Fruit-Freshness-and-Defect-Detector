@@ -40,7 +40,7 @@
  /** Set axisY properties here*/
     axisY:{
       //prefix: "$",
-      suffix: "Kgs"
+      suffix: " Percent"
     }
   });
 

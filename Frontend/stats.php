@@ -231,6 +231,9 @@ table, th, td {
       <div class="row">
         <div class="col-xl-12 mx-auto">
           <?php
+          $t_apple = 0;
+          $t_banana = 0;
+          $t_orange = 0;
           $u_apple = 0;
           $u_banana = 0;
           $u_orange = 0;
@@ -259,16 +262,22 @@ table, th, td {
             while ($row = mysqli_fetch_array($result,MYSQLI_ASSOC)) {
                //echo $row;
                if(@$row["Fruit_Name"] == 'Apple'){
-                 $u_apple = @$row["Usable_Kgs"];
-                 $un_apple = @$row["Unusable_Kgs"];
+                 $t_apple = @$row["Total_Kgs"];
+                if($t_apple > 0){
+                 $u_apple = (@$row["Usable_Kgs"] / $t_apple) * 100;
+                 $un_apple = 100 - $u_apple;}
                }elseif (@$row["Fruit_Name"] == 'Banana'){
-                 $u_banana = @$row["Usable_Kgs"];
-                 $un_banana = @$row["Unusable_Kgs"];
+                 $t_banana = @$row["Total_Kgs"];
+                 if($t_banana > 0){
+                  $u_banana = (@$row["Usable_Kgs"] / $t_banana) * 100;
+                  $un_banana = 100 - $u_banana;}
                }
                else
                {
-                 $u_orange = @$row["Usable_Kgs"];
-                 $un_orange = @$row["Unusable_Kgs"];
+                 $t_orange = @$row["Total_Kgs"];
+                 if($t_orange > 0){
+                  $u_orange = (@$row["Usable_Kgs"] / $t_orange) * 100;
+                  $un_orange = 100 - $u_orange;}
                }
                 echo "<tr>";
                 echo "<td>".@$row["Batch_No"]."</td>";
@@ -285,6 +294,9 @@ table, th, td {
           print '</table>';
           print '<br><br>';
         #  echo $u_apple;
+          #if($u_apple>0):
+        #  $u_apple = intdiv($u_apple, $t_apple)*100;
+
           include 'fruitchart.php';
          }
          ?>
